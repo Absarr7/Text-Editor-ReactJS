@@ -17,7 +17,8 @@ export default function TextUtils(props) {
     const uppercase = ()=>{
         let newTxt = Txt.toUpperCase()
         setTxt(newTxt)
-        console.log("your text was converted to uppercase");
+        // console.log("your text was converted to uppercase");
+        props.showAlert("converted to uppercase", "Success");
     }
 
     const lowercase = ()=>{
@@ -40,7 +41,7 @@ export default function TextUtils(props) {
         // Txt.select();
         if (Txt !== "") {
             navigator.clipboard.writeText(Txt);
-            alert("Text copied to clipboard")
+            // alert("Text copied to clipboard");
         }
         else {
             alert("What in world will you do by copying nothing?")
@@ -49,9 +50,10 @@ export default function TextUtils(props) {
 
     return (
         <>
-        <div className="container my-5">
+        <div className={`bigcontainer bg-${props.mode} p-5`}>
+        <div className="container">
         <div class="mb-3 my-5">
-        <h4>Enter text to analyze below:-</h4>
+        <h4 className={`text-${props.mode==='light'?'dark':'light'}`}>Enter text to analyze below:-</h4>
         <textarea className="form-control" value={Txt}id="exampleFormControlTextarea1" rows="3" onChange={ontextchange} placeholder="write your text here..."></textarea>
         </div>
         <button className="btn btn-primary mx-2" onClick={uppercase}>To uppercase</button>
@@ -61,11 +63,12 @@ export default function TextUtils(props) {
         </div>
         <div className="container">
         <div className="summary my-5">
-            <h3>Your text's summary</h3>
-            <p className="summary-text">
-            Your text have {Txt.split(" ").length} words and {Txt.length} characters.
+            <h3 className={`text-${props.mode==='light'?'dark':'light'}`}>Your text's summary</h3>
+            <p className={`summary-text text-${props.mode==='light'?'dark':'light'}`}>
+            Your text have {Txt.split(" ").length-1} words and {Txt.length} characters.
             </p>
-            <p className='analy'>It's going to take {Math.round(arrayed*0.2)} seconds to read the whole text</p>
+            <p className={`analy text-${props.mode==='light'?'dark':'light'}`}>It's going to take {Math.round(arrayed*0.2)} seconds to read the whole text</p>
+        </div>
         </div>
         </div>
         
