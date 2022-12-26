@@ -1,7 +1,6 @@
 import './App.css';
 
 import Navbar from './components/Navbar';
-import About from './components/About';
 import TextUtils from './components/TextUtiils';
 import React, { useState } from 'react'
 
