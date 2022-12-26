@@ -46,9 +46,9 @@ export default function TextUtils(props) {
         <textarea className="form-control" value={Txt}id="exampleFormControlTextarea1" rows="3" onChange={ontextchange} placeholder="write your text here..."></textarea>
         </div>
         <button className={`btn btn-primary border-0 bg-${props.mode==='light'?'primary':'warning'} text-${props.mode==='light'?'light':'dark'}`} onClick={uppercase}>To uppercase</button>
-        <button className={`btn btn-primary border-0 mx-2 bg-${props.mode==='light'?'primary':'warning'} text-${props.mode==='light'?'light':'dark'}`} onClick={lowercase}>To Lowercase</button>
-        <button className={`btn btn-primary border-0 mx-2 bg-${props.mode==='light'?'primary':'warning'} text-${props.mode==='light'?'light':'dark'}`} onClick={clearText}>Clear Text</button>
-        <button className={`btn btn-primary border-0 mx-2 bg-${props.mode==='light'?'primary':'warning'} text-${props.mode==='light'?'light':'dark'}`} onClick={copyText}>Copy Text</button>
+        <button className={`btn btn-primary border-0 mx-2 my-1 bg-${props.mode==='light'?'primary':'warning'} text-${props.mode==='light'?'light':'dark'}`} onClick={lowercase}>To Lowercase</button>
+        <button className={`btn btn-primary border-0 mx-2 my-1 bg-${props.mode==='light'?'primary':'warning'} text-${props.mode==='light'?'light':'dark'}`} onClick={clearText}>Clear Text</button>
+        <button className={`btn btn-primary border-0 mx-2 my-1 bg-${props.mode==='light'?'primary':'warning'} text-${props.mode==='light'?'light':'dark'}`} onClick={copyText}>Copy Text</button>
         </div>
         <div className="container">
         <div className="summary my-5">
