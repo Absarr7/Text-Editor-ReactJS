@@ -11,8 +11,11 @@ function App() {
   const toggleMode = ()=>{
     if (mode === 'light') {
       setmode('dark');
+      document.body.style.backgroundColor = '#121212';
+
     } else if (mode === 'dark') {
       setmode('light');
+      document.body.style.backgroundColor = 'white';
     } 
   }
 
@@ -21,8 +24,10 @@ function App() {
   const toggleGreenMode = ()=>{
     if (mode === 'light') {
       setmode('success');
+      document.body.style.backgroundColor = '#18A558';
     } else if (mode === 'success') {
       setmode('light');
+      document.body.style.backgroundColor = 'white';
     } 
   }
 

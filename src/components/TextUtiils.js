@@ -7,13 +7,11 @@ export default function TextUtils(props) {
     const uppercase = ()=>{
         let newTxt = Txt.toUpperCase()
         setTxt(newTxt)
-        console.log("your text was converted to uppercase");
     }
 
     const lowercase = ()=>{
         let newTxt = Txt.toLowerCase()
         setTxt(newTxt)
-        console.log("your text was converted to lowercase");
     }
 
 
@@ -39,9 +37,9 @@ export default function TextUtils(props) {
 
     return (
         <>
-        <div className={`bigcontainer bg-${props.mode} p-5`}>
+        {/* <div className={`bigcontainer bg-${props.mode} p-5`}> */}
         <div className="container">
-        <div class="mb-3 my-5">
+        <div className="mb-3 my-5">
         <h4 className={`text-${props.mode==='light'?'dark':'light'}`}>Enter text to analyze below:-</h4>
         <textarea className="form-control" value={Txt}id="exampleFormControlTextarea1" rows="3" onChange={ontextchange} placeholder="write your text here..."></textarea>
         </div>
@@ -54,12 +52,12 @@ export default function TextUtils(props) {
         <div className="summary my-5">
             <h3 className={`text-${props.mode==='light'?'dark':'light'}`}>Your text's summary</h3>
             <p className={`summary-text text-${props.mode==='light'?'dark':'light'}`}>
-            Your text have {Txt.split(" ").length-1} words and {Txt.length} characters.
+            Your text have {Txt.split(/\s/).filter((element)=>{return element.length!=0;}).length} words and {Txt.length} characters.
             </p>
             <p className={`analy text-${props.mode==='light'?'dark':'light'}`}>It's going to take {Math.round(arrayed*0.2)} seconds to read the whole text</p>
         </div>
         </div>
-        </div>
+        {/* </div> */}
         
         </>
     )
