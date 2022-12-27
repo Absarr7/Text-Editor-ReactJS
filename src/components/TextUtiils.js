@@ -41,7 +41,7 @@ export default function TextUtils(props) {
         <div className="container">
         <div className="mb-3 my-5">
         <h4 className={`text-${props.mode==='light'?'dark':'light'}`}>Enter text to analyze below:-</h4>
-        <textarea className="form-control" value={Txt}id="exampleFormControlTextarea1" rows="3" onChange={ontextchange} placeholder="write your text here..."></textarea>
+        <textarea style={{height: "200px"}} className="form-control" value={Txt}id="exampleFormControlTextarea1" rows="3" onChange={ontextchange} placeholder="write your text here..."></textarea>
         </div>
         <button className={`btn btn-primary border-0 bg-${props.mode==='light'?'primary':'warning'} text-${props.mode==='light'?'light':'dark'}`} onClick={uppercase}>To uppercase</button>
         <button className={`btn btn-primary border-0 mx-2 my-1 bg-${props.mode==='light'?'primary':'warning'} text-${props.mode==='light'?'light':'dark'}`} onClick={lowercase}>To Lowercase</button>
